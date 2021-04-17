@@ -21,21 +21,15 @@ byte Stage::run() {
 void Stage::animation_defilement()
 {
 	for (byte i = 0; i < 1; i++) {
-		unsigned long current_time = millis();
-		if (timer_animation < delai_animation + current_time) {
-			timer_animation = current_time;
-			pgameboard->toggle_light(i);
-			pgameboard->toggle_light(i + 10);
-		}
+		delay(delai_animation);
+		
+		pgameboard->toggle_light(i);
+		pgameboard->toggle_light(i + 10);
 	}
-	
 }
 
 void Stage::animation_toggle_all()
 {
-	unsigned long current_time = millis();
-		if (timer_animation < delai_animation + current_time) {
-			timer_animation = current_time;
-			pgameboard->toggle_all_lights();
-		}
+	delay(delai_animation);
+	pgameboard->toggle_all_lights();
 }
