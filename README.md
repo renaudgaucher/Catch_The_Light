@@ -6,9 +6,12 @@ Le programme fonctionne comme suit :
 
 Une class Gameboard permet de contrôler tout le hardware (i.e lights, buttons & display)
 
-Une class StageManager est l'enveloppe du programme, en son sein défilent des stages qui correspondent à des scènes du pièces de théatre. Typiquement un menu puis une partie.
+Une class StageManager est l'enveloppe du programme, celui ci enregistre une instance du GameBoard et le fait interagir avec les Stage (=mode de jeu). On notera qu'un stage Menu. 
 
 Les class StageMenu, StageGameVersus et Stage GameHightScore héritent de Stage, leur nom est explicite
+
+POUR FAIRE PLUS PROPREMENT :
+Ici les Stage "empruntent" le gameboard au StageManager, ce qui est d'une propreté douteuse. Dans un autre projet, on pourrait créer un gestionnaire d'événements : à chaque boucle le Stage enverrait les event au Stage en cours, puis récupérerait les actions à effectuer en les envoyant au gameboard. 
 
 
 INSTALLATION:
