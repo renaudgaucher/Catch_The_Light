@@ -31,10 +31,10 @@ Pour les connections avec l'arduino, il faut respecter les règles suivantes:
 
 
 PROJET FAISABLE MAIS NON IMPLEMENTE:
--Ajout d'un high-score (en utilisant la EEPROM déjà présente)
+-Ajout d'un high-score (en utilisant une EEPROM - il y en a dans l'atelier)
 
 -Modifier le Game design des mods de jeux déjà présents (ajuster les animations, les scores, etc.)
 
 -Ajouter des mods de jeu
 
--Ajout d'un gestionnaire de son (carte son déjà achetée, ainsi que de (trop) petits haut-parleur. Il faudrait plus de branchement pour utiliser un ampli)
+-Ajout d'un gestionnaire de son (carte son déjà achetée, à voir pour l'ampli et le haut-parleur).
