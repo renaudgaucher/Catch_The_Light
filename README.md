@@ -6,7 +6,7 @@ Le programme fonctionne comme suit :
 
 Une class Gameboard permet de contrôler tout le hardware (i.e lights, buttons & display)
 
-Une class StageManager est l'enveloppe du programme, celui ci enregistre une instance du GameBoard et le fait interagir avec les Stage (=mode de jeu). On notera qu'un stage Menu. 
+Une class StageManager est l'enveloppe du programme, celui ci enregistre une instance du GameBoard et le fait interagir avec les Stage (=mode de jeu). Une variable permet de savoir quel est le stage actuellement en cours, s'il faut en lancer un autre ou repasser au menu.
 
 Les class StageMenu, StageGameVersus et Stage GameHightScore héritent de Stage, leur nom est explicite
 
