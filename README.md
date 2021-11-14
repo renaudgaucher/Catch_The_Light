@@ -1,4 +1,4 @@
-# Catch_The_Light
+# Catch-The-Light
 Jeu implémenté dans une arduino MEGA pour créer une borne d'arcade dans la salle d'arcade de l'école Polytechnique
 
 Le programme fonctionne comme suit : 
@@ -17,11 +17,10 @@ Pour les connections avec l'arduino, il faut respecter les règles suivantes:
 -Les display (matrices) se connectent en dérivation avec les ports SDA et SCL, le GND avec le GND, et les +5V et V_10 avec le +5V
 -il faut laisser le pin analogique A0 libre (pour la génération de nombre aléatoire)
 
-TODO minimal:
--Menu RAS
--finir les modes de jeu, ajuster les durées des parties
 
 
 PROJET FAISABLE MAIS NON IMPLEMENTE:
 -Ajout d'un high-score (en utilisant la EEPROM déjà présente)
+-Modifier le Game design des mods de jeux déjà présents (ajuster les animations, les scores, etc.)
+-Ajouter des mods de jeu
 -Ajout d'un gestionnaire de son (carte son déjà achetée, ainsi que de (trop) petits haut-parleur. Il faudrait plus de branchement pour utiliser un ampli)
