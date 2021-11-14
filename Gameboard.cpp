@@ -101,10 +101,29 @@ bool Gameboard::risingEdge(byte num_boutton) {
   }
 }
 
+
 void Gameboard::afficher_play() {
     //Ne fonctionne pas encore
     uint8_t lettreP;
     uint8_t lettreL;
     uint8_t lettreA;
     uint8_t lettreY;
+}
+
+void Gameboard::afficher_menu() {
+    uint8_t bitmaskM = 0b00110111;
+    uint8_t bitmaskE = 0b01111001;
+    uint8_t bitmaskN = 0b01010100;
+    uint8_t bitmaskU = 0b00111110;
+    matrix1.writeDigitRaw(0, bitmaskM);
+    matrix1.writeDigitRaw(1, bitmaskE);
+    matrix1.writeDigitRaw(3, bitmaskN);
+    matrix1.writeDigitRaw(4, bitmaskU);
+    matrix1.writeDisplay();
+
+    matrix2.writeDigitRaw(0, bitmaskM);
+    matrix2.writeDigitRaw(1, bitmaskE);
+    matrix2.writeDigitRaw(3, bitmaskN);
+    matrix2.writeDigitRaw(4, bitmaskU);
+    matrix2.writeDisplay();
 }

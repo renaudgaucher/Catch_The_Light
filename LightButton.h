@@ -22,10 +22,13 @@ class LightButton{
 
     //constructeur
     LightButton(int pinLight, int pinButton);
+    
     //True si le bouton est pressé
     bool b_get_button_State();
+    
     //True si détection de front montant (changement de LOW à HIGH)
     bool b_risingEdge();
+    
     //etat du bouton
     bool b_getState();
 

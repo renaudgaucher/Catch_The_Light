@@ -11,7 +11,7 @@
 	#include "WProgram.h"
 #endif
 
-byte getSeed(); // retourne une Seed aleatoire: changer a chaque debut de partie
+byte getSeed(); // retourne une Seed aleatoire: change a chaque debut de partie
 
 #endif
 

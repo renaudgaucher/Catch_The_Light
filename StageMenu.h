@@ -9,6 +9,7 @@ class StageMenu : public Stage
 public:
 	StageMenu(Gameboard* gameboard);
 	virtual byte run();
+	void launch();
 };
 
 #endif

@@ -41,6 +41,8 @@ public:
 	void off_all_lights();
 	//détection de l'utilisation d'un bouton
 	bool risingEdge(byte num_boutton);
+	//affichage de texte specifique
+	void afficher_menu();
 
 };
 

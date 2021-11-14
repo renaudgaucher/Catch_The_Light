@@ -1,5 +1,5 @@
 // 
-// 
+// Permet de générer de l'aléatoire.
 // 
 
 #include "Random.h"

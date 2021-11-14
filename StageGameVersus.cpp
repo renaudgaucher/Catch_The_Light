@@ -1,11 +1,6 @@
 #include "StageGameVersus.h"
 
-#define ROUNDDURATION 45000 //45s jeu + 15s pause * 3 par partie
-#define PAUSEDURATION 15000
-#define NUMBER_OF_ROUND 3
 
-#define BONUS_SCORE_RIGHT_LIGHT 3
-#define MALUS_SCORE_FALSE_LIGHT 1
 
 StageGameVersus::StageGameVersus(Gameboard* gameboard) :Stage(gameboard)
 {
@@ -20,8 +15,16 @@ StageGameVersus::StageGameVersus(Gameboard* gameboard) :Stage(gameboard)
 	timeBegin = millis();
 }
 
+StageGameVersus::~StageGameVersus()
+{
+	//a Remplir pour plus propre mais pas important
+}
+
 byte StageGameVersus::run() {
-	getEvent();
+	for (int i = 0; i < 20; i++) {
+		events[i] = false;
+	}
+	getEvent(events);
 
 	if (gameState == RUN) {
 		runRound();
@@ -46,9 +49,12 @@ void StageGameVersus::runRound() {
 			animationPause();
 		}
 		else {
+			animation_0();
 			gameState = EXIT;
+			Serial.println("gameState=EXIT");
 		}
 	}
+
 }
 
 void StageGameVersus:: runPause() {
@@ -56,6 +62,8 @@ void StageGameVersus:: runPause() {
 	if (currentTime > timeBegin + pauseDuration) {
 		gameState = RUN;
 		timeBegin = millis();
+		animationPause();
+		changeLight();
 	}
 }
 
@@ -83,30 +91,22 @@ void StageGameVersus::handleEvents() {
 }
 
 void StageGameVersus::changeLight() {
-	pgameboard->toggle_light(lightOn);
-	pgameboard->toggle_light(lightOn+10);
+	pgameboard->off_light(lightOn);
+	pgameboard->off_light(lightOn+10);
 	
 	byte newLightOn = 0; 
 	do{
 		newLightOn = random(0, 10);
+		Serial.println(newLightOn);
 	}
-	while (newLightOn != lightOn);
+	while (newLightOn == lightOn);
 	lightOn = newLightOn;
 	
-	pgameboard->toggle_light(lightOn);
-	pgameboard->toggle_light(lightOn + 10);
+	pgameboard->on_light(lightOn);
+	pgameboard->on_light(lightOn + 10);
 }
 
 void StageGameVersus::printScore() {
 	pgameboard->afficher_score(1, score1);
 	pgameboard->afficher_score(2, score2);
-}
-
-void StageGameVersus::animationPause() {
-	pgameboard->off_all_lights();
-	animation_defilement();
-	animation_defilement();
-	animation_toggle_all();
-	animation_toggle_all();
-	pgameboard->off_all_lights();
 }

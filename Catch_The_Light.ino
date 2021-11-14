@@ -14,11 +14,28 @@ void setup() {
 }
 
 
-//Rappel : On ne peut pas faire de while(true) au sein de loop : le programme relance loop() regulierement automatiquement
 void loop() {
     
     stageManager.run();
 
+
+    /*
+    for (int light = 0; light < 20; light++) {
+    
+
+      if (stageManager.gameboard.risingEdge(light)){
+        stageManager.gameboard.toggle_light(light);
+        if(light <10){
+          score1++;
+          stageManager.gameboard.afficher_score(1, score1);
+        }
+        else{
+          score2++;
+          stageManager.gameboard.afficher_score(2, score2);
+        }
+      }
+    }
+    */
     /*
     if (stageManager.gameboard.risingEdge(10)) {
         score1++;
